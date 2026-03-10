@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакты · FC Batyr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .map-placeholder {
+      width:100%; height:320px; background:var(--card);
+      border:1px solid rgba(255,255,255,.05);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; gap:14px;
+    }
+    .map-placeholder span { font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.3); }
+    .map-placeholder a { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); border-bottom:1px solid rgba(201,168,76,.3); transition:border-color .2s; }
+    .map-placeholder a:hover { border-color:var(--gold); }
+    iframe.real-map { width:100%; height:320px; border:none; filter:invert(.9) hue-rotate(190deg) saturate(.5) brightness(.9); }
+  </style>
+</head>
+<body>
+
+<div id="particles" aria-hidden="true"></div>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="burger" id="burger-btn" aria-label="Меню">
+        <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+      </button>
+      <a href="index.html" class="header-logo-link">
+        <div class="header-emblem"><img src="logo.png" alt="FCB" onerror="this.style.display='none'" /></div>
+        <span class="header-brand">FC <span>BATYR</span></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<nav class="slide-nav" id="slide-nav">
+  <div class="slide-nav-head">
+    <div class="slide-nav-logo-img"><img src="logo.png" alt="FCB" onerror="this.style.display='none'" /></div>
+    <div><div class="slide-nav-title">FC <span>BATYR</span></div><div class="slide-nav-sub">Академия · Экибастуз · 2015</div></div>
+  </div>
+  <ul class="slide-nav-list">
+    <li><a href="index.html" class="nav-close">Главная <span class="nav-arr">→</span></a></li>
+    <li><a href="news.html" class="nav-close">События клуба <span class="nav-arr">→</span></a></li>
+    <li><a href="gallery.html" class="nav-close">Галерея <span class="nav-arr">→</span></a></li>
+    <li><a href="program.html" class="nav-close">О программе <span class="nav-arr">→</span></a></li>
+    <li><a href="contacts.html" class="nav-close">Контакты <span class="nav-arr">→</span></a></li>
+  </ul>
+  <div class="slide-nav-footer">
+    <a href="#form" class="slide-nav-cta primary nav-close">Подать заявку</a>
+    <a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" class="slide-nav-cta outline">Instagram →</a>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<div class="subpage-hero">
+  <a href="index.html" class="back-link">На главную</a>
+  <p class="eyebrow">Связаться с нами</p>
+  <h1>Контакты</h1>
+  <p>Свяжитесь с FC Batyr или запишите ребёнка в академию прямо сейчас.</p>
+</div>
+
+<!-- КОНТАКТЫ + ФОРМА -->
+<section class="contact-section section" id="form">
+  <div class="contact-wrap" data-reveal>
+    <div class="contact-info">
+      <h3>Реквизиты клуба</h3>
+      <p>Мы всегда рады новым воспитанникам. Принимаем детей от 4 до 18 лет во все возрастные группы.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="c-label">Email</div>
+          <div class="c-val"><a href="mailto:info@fcbatyr.kz">info@fcbatyr.kz</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-label">Instagram</div>
+          <div class="c-val"><a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" rel="noopener">@fcbatyr_ekb</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-label">Адрес академии</div>
+          <div class="c-val">ул. Казбека Нуралина 142А<br />Экибастуз, Казахстан</div>
+        </div>
+        <div class="contact-item">
+          <div class="c-label">Зал тренировок</div>
+          <div class="c-val">Спортзал по ул. Беркимбаева<br /><span style="color:rgba(255,255,255,.4);font-size:12px">рядом с мечетью</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-label">Набор</div>
+          <div class="c-val">Дети 2007–2021 г.р.<br /><span style="color:rgba(255,255,255,.4);font-size:12px">Возраст от 4 до 18 лет</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-label">Основан</div>
+          <div class="c-val">2015 год · Экибастуз</div>
+        </div>
+      </div>
+
+      <!-- Map placeholder -->
+      <div style="margin-top:16px">
+        <div class="map-placeholder">
+          <span>📍 Экибастуз, Казахстан</span>
+          <a href="https://maps.google.com/?q=Экибастуз,+ул.+Казбека+Нуралина+142А" target="_blank" rel="noopener">Открыть в Google Maps →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-block">
+      <h3>Форма заявки</h3>
+      <form id="contactForm" novalidate>
+        <input type="hidden" name="access_key" value="ad1a588d-4785-471f-af58-3573be70d8b1" />
+        <input type="hidden" name="subject" value="Новая заявка — FC Batyr" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="form-grid">
+          <div class="form-row2">
+            <div class="field">
+              <label for="name">Имя и фамилия *</label>
+              <input id="name" name="name" type="text" placeholder="Иванов Иван" />
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" />
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" placeholder="example@mail.com" />
+            <span class="field-error"></span>
+          </div>
+          <div class="form-row2">
+            <div class="field">
+              <label for="child-name">Имя ребёнка</label>
+              <input id="child-name" name="child_name" type="text" placeholder="Алибек" />
+            </div>
+            <div class="field">
+              <label for="birth-year">Год рождения</label>
+              <input id="birth-year" name="birth_year" type="text" placeholder="2013" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="group">Возрастная группа *</label>
+            <select id="group" name="group">
+              <option value="">— Выберите группу —</option>
+              <option value="U10-U12">U10–U12 (2013–2021 г.р.) · 4–12 лет</option>
+              <option value="U13-U14">U13–U14 (2011–2012 г.р.) · 12–14 лет</option>
+              <option value="U15-U16">U15–U16 (2009–2010 г.р.) · 14–16 лет</option>
+              <option value="U15-U18">U15–U18 (2007–2010 г.р.) · 15–18 лет</option>
+            </select>
+            <span class="field-error"></span>
+          </div>
+          <div class="field">
+            <label for="message">Сообщение / вопросы</label>
+            <textarea id="message" name="message" rows="5" placeholder="Опыт ребёнка, вопросы, удобное время для визита…"></textarea>
+          </div>
+          <button class="submit-btn" type="submit" id="sendBtn">Отправить заявку</button>
+          <div class="form-status" id="formStatus"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-emblem">
+        <img src="logo.png" alt="FC Batyr" onerror="this.outerHTML='<span class=footer-emblem-txt>FCB</span>'" />
+      </div>
+      <p class="footer-tagline">FC Batyr — официальная футбольная академия Экибастуза.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Страницы</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="news.html">События клуба</a></li>
+        <li><a href="gallery.html">Галерея</a></li>
+        <li><a href="program.html">О программе</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Группы</div>
+      <ul class="footer-links">
+        <li><a href="#form">U10–U12</a></li>
+        <li><a href="#form">U13–U14</a></li>
+        <li><a href="#form">U15–U16</a></li>
+        <li><a href="#form">U15–U18</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Контакты</div>
+      <ul class="footer-links">
+        <li><a href="mailto:info@fcbatyr.kz">info@fcbatyr.kz</a></li>
+        <li><a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank">@fcbatyr_ekb</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© <span class="js-year"></span> FC Batyr. Все права защищены.</p>
+    <div class="social-links"><a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" class="social-link">IG</a></div>
+  </div>
+</footer>
+
+<div id="snackbar-root"></div>
+<script src="app.js"></script>
+</body>
+</html>

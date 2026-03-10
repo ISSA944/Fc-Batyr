@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>О программе · FC Batyr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .prog-blocks { display:flex; flex-direction:column; gap:3px; }
+    .prog-block { background:var(--card); padding:clamp(36px,5vw,56px); display:grid; grid-template-columns:1fr 2fr; gap:48px; align-items:start; border:1px solid rgba(255,255,255,.04); transition:border-color .3s; }
+    .prog-block:hover { border-color:rgba(201,168,76,.15); }
+    @media(max-width:760px){ .prog-block { grid-template-columns:1fr; gap:20px; } }
+    .prog-num { font-family:'Bebas Neue',sans-serif; font-size:80px; color:rgba(201,168,76,.2); line-height:1; }
+    .prog-title { font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--white); margin-bottom:14px; }
+    .prog-body { font-size:15px; font-weight:300; line-height:1.8; color:rgba(255,255,255,.58); }
+    .prog-body p + p { margin-top:14px; }
+    .ages-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+    @media(max-width:900px){ .ages-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:480px){ .ages-grid { grid-template-columns:1fr; } }
+    .age-block { background:rgba(255,255,255,.03); border:1px solid rgba(201,168,76,.08); padding:32px 24px; transition:border-color .3s,transform .3s; }
+    .age-block:hover { border-color:rgba(201,168,76,.3); transform:translateY(-4px); }
+    .age-num { font-family:'Bebas Neue',sans-serif; font-size:56px; color:var(--gold); line-height:1; }
+    .age-range { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:16px; }
+    .age-goals { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .age-goals li { font-size:13px; font-weight:300; color:rgba(255,255,255,.6); display:flex; gap:8px; }
+    .age-goals li::before { content:'—'; color:var(--gold); flex-shrink:0; }
+  </style>
+</head>
+<body>
+
+<div id="particles" aria-hidden="true"></div>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="burger" id="burger-btn" aria-label="Меню">
+        <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+      </button>
+      <a href="index.html" class="header-logo-link">
+        <div class="header-emblem"><img src="logo.png" alt="FCB" onerror="this.style.display='none'" /></div>
+        <span class="header-brand">FC <span>BATYR</span></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<nav class="slide-nav" id="slide-nav">
+  <div class="slide-nav-head">
+    <div class="slide-nav-logo-img"><img src="logo.png" alt="FCB" onerror="this.style.display='none'" /></div>
+    <div><div class="slide-nav-title">FC <span>BATYR</span></div><div class="slide-nav-sub">Академия · Экибастуз · 2015</div></div>
+  </div>
+  <ul class="slide-nav-list">
+    <li><a href="index.html" class="nav-close">Главная <span class="nav-arr">→</span></a></li>
+    <li><a href="news.html" class="nav-close">События клуба <span class="nav-arr">→</span></a></li>
+    <li><a href="gallery.html" class="nav-close">Галерея <span class="nav-arr">→</span></a></li>
+    <li><a href="program.html" class="nav-close">О программе <span class="nav-arr">→</span></a></li>
+    <li><a href="contacts.html" class="nav-close">Контакты <span class="nav-arr">→</span></a></li>
+  </ul>
+  <div class="slide-nav-footer">
+    <a href="contacts.html#form" class="slide-nav-cta primary nav-close">Подать заявку</a>
+    <a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" class="slide-nav-cta outline">Instagram →</a>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<div class="subpage-hero">
+  <a href="index.html" class="back-link">На главную</a>
+  <p class="eyebrow">Методология</p>
+  <h1>О <em>программе</em></h1>
+  <p>Система подготовки FC Batyr разработана по стандартам UEFA для детей от 4 до 18 лет.</p>
+</div>
+
+<!-- ВОЗРАСТНЫЕ ГРУППЫ -->
+<section class="section" style="background:#080c1a">
+  <div class="sec-head" data-reveal>
+    <div><p class="eyebrow">Возрастные группы</p><h2 class="section-title">Учебные группы</h2></div>
+    <a href="contacts.html#form" class="see-all">Записаться →</a>
+  </div>
+  <div class="ages-grid">
+    <div class="age-block" data-reveal data-delay="1">
+      <div class="age-num">U10</div>
+      <div class="age-range">U10–U12 · с 4 до 12 лет</div>
+      <ul class="age-goals">
+        <li>Техника владения мячом</li>
+        <li>Основы командной игры</li>
+        <li>Правила футбола</li>
+        <li>Радость от спорта</li>
+      </ul>
+    </div>
+    <div class="age-block" data-reveal data-delay="2">
+      <div class="age-num">U13</div>
+      <div class="age-range">U13–U14 · 12–14 лет</div>
+      <ul class="age-goals">
+        <li>Индивидуальная тактика</li>
+        <li>Стандартные положения</li>
+        <li>Игровое мышление</li>
+        <li>Физическое развитие</li>
+      </ul>
+    </div>
+    <div class="age-block" data-reveal data-delay="3">
+      <div class="age-num">U15</div>
+      <div class="age-range">U15–U16 · 14–16 лет</div>
+      <ul class="age-goals">
+        <li>Командная тактика</li>
+        <li>Турнирная подготовка</li>
+        <li>Физическая нагрузка</li>
+        <li>Региональные соревнования</li>
+      </ul>
+    </div>
+    <div class="age-block" data-reveal data-delay="4">
+      <div class="age-num">U18</div>
+      <div class="age-range">U15–U18 · 15–18 лет</div>
+      <ul class="age-goals">
+        <li>Профессиональная подготовка</li>
+        <li>Видеоаналитика</li>
+        <li>Переход во взрослый футбол</li>
+        <li>Спарринги с лигами</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME BLOCKS -->
+<section class="section" style="background:var(--dark)">
+  <div class="sec-head" data-reveal>
+    <div><p class="eyebrow">Наш подход</p><h2 class="section-title">Как мы работаем</h2></div>
+  </div>
+  <div class="prog-blocks">
+    <div class="prog-block" data-reveal>
+      <div><div class="prog-num">01</div></div>
+      <div>
+        <div class="prog-title">Структурированная программа UEFA</div>
+        <div class="prog-body">
+          <p>Учебный план FC Batyr разработан по стандартам UEFA и адаптирован к условиям Казахстана. Каждая возрастная группа занимается по своему плану, учитывающему физические данные и уровень подготовки детей.</p>
+          <p>Программа охватывает техническую, тактическую, физическую и психологическую подготовку. Все компоненты сбалансированы согласно возрасту воспитанников.</p>
+        </div>
+      </div>
+    </div>
+    <div class="prog-block" data-reveal>
+      <div><div class="prog-num">02</div></div>
+      <div>
+        <div class="prog-title">Профессиональный тренерский штаб</div>
+        <div class="prog-body">
+          <p>Тренеры FC Batyr — это специалисты с действующими лицензиями UEFA, которые регулярно повышают квалификацию. Каждый тренер работает только со своей возрастной группой, что позволяет максимально сфокусироваться на нуждах именно этого возраста.</p>
+        </div>
+      </div>
+    </div>
+    <div class="prog-block" data-reveal>
+      <div><div class="prog-num">03</div></div>
+      <div>
+        <div class="prog-title">Соревновательная практика</div>
+        <div class="prog-body">
+          <p>Мы верим, что настоящее развитие игрока происходит в соревновательных условиях. Поэтому все группы академии регулярно участвуют в товарищеских матчах, региональных турнирах и чемпионатах Казахстана.</p>
+          <p>Для старших групп организуются спарринги с профессиональными командами и академиями других городов.</p>
+        </div>
+      </div>
+    </div>
+    <div class="prog-block" data-reveal>
+      <div><div class="prog-num">04</div></div>
+      <div>
+        <div class="prog-title">Мониторинг и обратная связь</div>
+        <div class="prog-body">
+          <p>Родители всегда знают о прогрессе своего ребёнка. Тренеры регулярно проводят индивидуальные беседы и дают рекомендации по домашней работе. Для старших групп применяется видеоаналитика.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item" data-reveal><span class="stat-num">4</span><div class="stat-lbl">Группы подготовки</div></div>
+  <div class="stat-item" data-reveal data-delay="1"><span class="stat-num">100+</span><div class="stat-lbl">Воспитанников</div></div>
+  <div class="stat-item" data-reveal data-delay="2"><span class="stat-num">10+</span><div class="stat-lbl">Лет опыта</div></div>
+  <div class="stat-item" data-reveal data-delay="3"><span class="stat-num">UEFA</span><div class="stat-lbl">Лицензии</div></div>
+</div>
+
+<!-- CTA -->
+<section class="section" style="background:#080c1a;text-align:center">
+  <p class="eyebrow" style="justify-content:center" data-reveal>Вступить в академию</p>
+  <h2 class="section-title" style="margin-bottom:20px" data-reveal data-delay="1">Готовы начать?</h2>
+  <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.55);max-width:500px;margin:0 auto 32px;line-height:1.75" data-reveal data-delay="2">Запишите ребёнка в FC Batyr прямо сейчас. Мы принимаем детей от 4 до 18 лет.</p>
+  <a href="contacts.html#form" class="btn-red" data-reveal data-delay="3">Подать заявку</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="padding-top:0;border:none">
+    <p class="footer-copy">© <span class="js-year"></span> FC Batyr · <a href="index.html" style="color:var(--gold)">На главную</a></p>
+    <div class="social-links"><a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" class="social-link">IG</a></div>
+  </div>
+</footer>
+
+<div id="snackbar-root"></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель | FC Batyr</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body class="admin-page">
+    <header class="admin-top">
+        <div class="container admin-top-inner">
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="img/logo.png" alt="FC Batyr">
+                <span class="brand-text">
+                    <strong>FC BATYR</strong>
+                    <small>Официальная админ-панель</small>
+                </span>
+            </a>
+            <a class="btn btn-ghost btn-small" href="index.html">На сайт</a>
+        </div>
+    </header>
+
+    <main class="container admin-shell">
+        <section class="panel-card admin-login-card" id="admin-login-block">
+            <p class="eyebrow">Доступ к системе</p>
+            <h1>Вход в административную панель</h1>
+            <p class="muted">Доступ только для представителей клуба. Тестовый пароль: <strong>batyr-2026</strong>.</p>
+            <form id="admin-login-form" class="admin-form admin-form--auth">
+                <div class="field-floating">
+                    <input type="email" id="admin-email" required placeholder=" " autocomplete="email">
+                    <label for="admin-email">Email администратора</label>
+                    <span class="field-floating__icon" aria-hidden="true"></span>
+                </div>
+                <div class="field-floating">
+                    <input type="password" id="admin-password" required placeholder=" " autocomplete="current-password">
+                    <label for="admin-password">Пароль</label>
+                </div>
+                <button class="btn btn-primary" type="submit">Войти в систему</button>
+                <p class="form-status is-error" id="admin-login-error" role="alert"></p>
+            </form>
+        </section>
+
+        <section id="admin-panel" hidden>
+            <div class="panel-card">
+                <div class="admin-top-inner">
+                    <div>
+                        <p class="eyebrow">Управление контентом</p>
+                        <h2>Панель управления FC Batyr</h2>
+                    </div>
+                    <button type="button" class="btn btn-ghost btn-small" id="admin-logout">Выйти</button>
+                </div>
+
+                <div class="admin-tabs" role="tablist" aria-label="Разделы панели">
+                    <button class="admin-tab is-active" type="button" data-tab-target="tab-club">Клуб</button>
+                    <button class="admin-tab" type="button" data-tab-target="tab-coaches">Тренеры</button>
+                    <button class="admin-tab" type="button" data-tab-target="tab-trainings">Тренировки</button>
+                    <button class="admin-tab" type="button" data-tab-target="tab-messages">Заявки</button>
+                </div>
+            </div>
+
+            <section id="tab-club" class="admin-tab-panel panel-card">
+                <h3>Контент официального сайта</h3>
+                <form id="club-form" class="admin-form">
+                    <label>
+                        Тег в hero
+                        <input type="text" name="heroTag" required>
+                    </label>
+                    <label>
+                        Заголовок hero
+                        <input type="text" name="heroTitle" required>
+                    </label>
+                    <label>
+                        Подзаголовок hero
+                        <textarea name="heroSubtitle" rows="3" required></textarea>
+                    </label>
+                    <label>
+                        Описание клуба
+                        <textarea name="clubDescription" rows="4" required></textarea>
+                    </label>
+                    <label>
+                        Телефон
+                        <input type="text" name="phone" required>
+                    </label>
+                    <label>
+                        Email
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>
+                        Адрес
+                        <input type="text" name="address" required>
+                    </label>
+                    <div class="admin-actions">
+                        <button class="btn btn-primary" type="submit">Сохранить изменения</button>
+                        <button class="btn btn-danger" id="reset-defaults" type="button">Сбросить к базовым данным</button>
+                    </div>
+                    <p class="form-status" id="admin-status-club"></p>
+                </form>
+            </section>
+
+            <section id="tab-coaches" class="admin-tab-panel panel-card" hidden>
+                <h3>Управление тренерским штабом</h3>
+                <form id="coach-form" class="admin-form">
+                    <label>
+                        Имя
+                        <input type="text" name="name" required>
+                    </label>
+                    <label>
+                        Должность
+                        <input type="text" name="role" placeholder="Главный тренер U14">
+                    </label>
+                    <label>
+                        Опыт
+                        <input type="text" name="experience" placeholder="Опыт: 9 лет">
+                    </label>
+                    <label>
+                        Лицензия
+                        <input type="text" name="license" placeholder="Лицензия: UEFA C">
+                    </label>
+                    <label>
+                        Специализация
+                        <input type="text" name="focus" placeholder="Направление: тактическая подготовка">
+                    </label>
+                    <button class="btn btn-primary" type="submit">Добавить тренера</button>
+                    <p class="form-status" id="admin-status-coach"></p>
+                </form>
+                <div class="admin-list" id="admin-coaches-list"></div>
+            </section>
+
+            <section id="tab-trainings" class="admin-tab-panel panel-card" hidden>
+                <h3>Управление тренировочными группами</h3>
+                <form id="training-form" class="admin-form">
+                    <label>
+                        Название группы
+                        <input type="text" name="title" required>
+                    </label>
+                    <label>
+                        Возраст
+                        <input type="text" name="age" placeholder="12-14 лет">
+                    </label>
+                    <label>
+                        Дни
+                        <input type="text" name="days" placeholder="Пн / Ср / Пт">
+                    </label>
+                    <label>
+                        Время
+                        <input type="text" name="time" placeholder="18:00 - 19:30">
+                    </label>
+                    <label>
+                        Локация
+                        <input type="text" name="location" placeholder="Спорткомплекс FC Batyr">
+                    </label>
+                    <label>
+                        Комментарий
+                        <input type="text" name="note" placeholder="Цель цикла, акцент или формат">
+                    </label>
+                    <button class="btn btn-primary" type="submit">Добавить тренировку</button>
+                    <p class="form-status" id="admin-status-training"></p>
+                </form>
+                <div class="admin-list" id="admin-trainings-list"></div>
+            </section>
+
+            <section id="tab-messages" class="admin-tab-panel panel-card" hidden>
+                <div class="admin-top-inner">
+                    <h3>Входящие заявки</h3>
+                    <button class="btn btn-danger btn-small" id="clear-messages" type="button">Очистить все заявки</button>
+                </div>
+                <div class="admin-list" id="admin-messages-list"></div>
+            </section>
+        </section>
+    </main>
+
+    <div id="snackbar-root" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

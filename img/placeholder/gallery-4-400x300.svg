@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="galleryGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4ce38;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ffe78f;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#galleryGrad4)"/>
+  <text x="200" y="150" text-anchor="middle" dy="0.3em" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" opacity="0.7">
+    Фото 4
+  </text>
+</svg>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Галерея · FC Batyr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-full { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
+    @media(max-width:760px){ .gallery-full { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:480px){ .gallery-full { grid-template-columns:1fr; } }
+    .gallery-full .gallery-item { aspect-ratio:4/3; }
+    .ig-cta { background:linear-gradient(135deg,var(--navy),#001035); padding:clamp(50px,8vh,80px) clamp(22px,5vw,76px); text-align:center; }
+    .ig-cta h3 { font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,5vw,56px); letter-spacing:2px; margin-bottom:16px; }
+    .ig-cta p { font-size:15px; font-weight:300; color:rgba(255,255,255,.55); margin-bottom:32px; }
+  </style>
+</head>
+<body>
+
+<div id="particles" aria-hidden="true"></div>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="burger" id="burger-btn" aria-label="Меню">
+        <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+      </button>
+      <a href="index.html" class="header-logo-link">
+        <div class="header-emblem"><img src="logo.png" alt="FCB" onerror="this.style.display='none'" /></div>
+        <span class="header-brand">FC <span>BATYR</span></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<nav class="slide-nav" id="slide-nav">
+  <div class="slide-nav-head">
+    <div class="slide-nav-logo-img"><img src="logo.png" alt="FCB" onerror="this.style.display='none'" /></div>
+    <div><div class="slide-nav-title">FC <span>BATYR</span></div><div class="slide-nav-sub">Академия · Экибастуз · 2015</div></div>
+  </div>
+  <ul class="slide-nav-list">
+    <li><a href="index.html" class="nav-close">Главная <span class="nav-arr">→</span></a></li>
+    <li><a href="news.html" class="nav-close">События клуба <span class="nav-arr">→</span></a></li>
+    <li><a href="gallery.html" class="nav-close">Галерея <span class="nav-arr">→</span></a></li>
+    <li><a href="program.html" class="nav-close">О программе <span class="nav-arr">→</span></a></li>
+    <li><a href="contacts.html" class="nav-close">Контакты <span class="nav-arr">→</span></a></li>
+  </ul>
+  <div class="slide-nav-footer">
+    <a href="contacts.html#form" class="slide-nav-cta primary nav-close">Подать заявку</a>
+    <a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" class="slide-nav-cta outline">Instagram →</a>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<div class="subpage-hero">
+  <a href="index.html" class="back-link">На главную</a>
+  <p class="eyebrow">Фотогалерея</p>
+  <h1>Жизнь <em>клуба</em></h1>
+  <p>Тренировки, матчи, турниры и события академии FC Batyr Экибастуз.</p>
+</div>
+
+<section class="gallery-section section">
+  <div class="gallery-full" data-reveal>
+    <div class="gallery-item"><img src="gallery-1-400x300.svg" alt="Тренировка" /><div class="gallery-cap"><span>Тренировка</span></div></div>
+    <div class="gallery-item"><img src="gallery-2-400x300.svg" alt="Матч" /><div class="gallery-cap"><span>Матч</span></div></div>
+    <div class="gallery-item"><img src="gallery-3-400x300.svg" alt="Команда" /><div class="gallery-cap"><span>Команда</span></div></div>
+    <div class="gallery-item"><img src="gallery-5-400x300.svg" alt="Турнир" /><div class="gallery-cap"><span>Турнир</span></div></div>
+    <div class="gallery-item"><img src="gallery-6-400x300.svg" alt="Академия" /><div class="gallery-cap"><span>Академия</span></div></div>
+    <div class="gallery-item"><img src="news-1-600x400.svg" alt="U15-U16" /><div class="gallery-cap"><span>U15–U16</span></div></div>
+    <div class="gallery-item"><img src="news-2-600x400.svg" alt="Победа" /><div class="gallery-cap"><span>Победа</span></div></div>
+    <div class="gallery-item"><img src="news-3-600x400.svg" alt="Штаб" /><div class="gallery-cap"><span>Тренерский штаб</span></div></div>
+    <div class="gallery-item" style="background:var(--card);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;cursor:default">
+      <span style="font-size:32px">📸</span>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.35)">Скоро больше фото</span>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram CTA -->
+<div class="ig-cta">
+  <p class="eyebrow" style="justify-content:center">Следите за нами</p>
+  <h3>Больше фото в Instagram</h3>
+  <p>Все актуальные фото, видео и новости публикуем в нашем Instagram аккаунте.</p>
+  <a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" rel="noopener" class="btn-red" style="display:inline-block">@fcbatyr_ekb</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="padding-top:0;border:none">
+    <p class="footer-copy">© <span class="js-year"></span> FC Batyr · <a href="index.html" style="color:var(--gold)">На главную</a></p>
+    <div class="social-links"><a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" class="social-link">IG</a></div>
+  </div>
+</footer>
+
+<div id="snackbar-root"></div>
+<script src="app.js"></script>
+</body>
+</html>
