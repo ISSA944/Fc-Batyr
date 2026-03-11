@@ -138,7 +138,8 @@ img {
   height: 70px;
   z-index: 200;
   transition: transform 0.4s var(--ease), background 0.3s ease;
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.2) 100%);
+  backdrop-filter: blur(5px);
 }
 
 .site-header.scrolled {
@@ -301,7 +302,7 @@ img {
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  margin-top: 70px;
+  margin-top: 0;
 }
 
 .hero-media {
@@ -334,7 +335,7 @@ img {
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 clamp(24px, 5vw, 80px) clamp(80px, 10vh, 120px);
+  padding: clamp(100px, 15vh, 150px) clamp(24px, 5vw, 80px) clamp(80px, 10vh, 120px);
   max-width: 900px;
   animation: contentFadeUp 1s ease-out 1s both;
 }
@@ -1422,7 +1423,7 @@ img {
   }
 
   .hero-content {
-    padding: 0 16px clamp(60px, 8vh, 80px);
+    padding: clamp(90px, 12vh, 120px) 16px clamp(60px, 8vh, 80px);
   }
 
   .hero-title {
@@ -1517,7 +1518,7 @@ img {
   }
 
   .hero-content {
-    padding: 0 14px clamp(50px, 6vh, 70px);
+    padding: clamp(80px, 10vh, 100px) 14px clamp(50px, 6vh, 70px);
   }
 
   .hero-title {
@@ -1792,11 +1793,11 @@ img {
 
   .hero {
     min-height: 400px;
-    margin-top: 60px;
+    margin-top: 0;
   }
 
   .hero-content {
-    padding: 0 12px clamp(40px, 5vh, 60px);
+    padding: clamp(70px, 9vh, 90px) 12px clamp(40px, 5vh, 60px);
   }
 
   .hero-title {
