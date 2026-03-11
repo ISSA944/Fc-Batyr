@@ -3,7 +3,7 @@
    Modern Dark Minimalist Design
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap');
 
 :root {
   --black:   #0a0a0a;
@@ -27,10 +27,13 @@ html {
 }
 
 body {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--black);
   color: var(--white);
   overflow-x: hidden;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 a {
@@ -86,11 +89,12 @@ img {
 }
 
 .pre-logo {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 56px;
   letter-spacing: 6px;
   color: var(--white);
   text-align: center;
+  font-weight: 700;
 }
 
 .pre-logo span {
@@ -180,10 +184,11 @@ img {
 }
 
 .header-brand {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 20px;
   letter-spacing: 3px;
   color: var(--white);
+  font-weight: 700;
 }
 
 .header-brand .accent {
@@ -366,12 +371,13 @@ img {
 }
 
 .hero-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: clamp(52px, 10vw, 120px);
   line-height: 0.95;
   letter-spacing: 2px;
   color: var(--white);
   margin-bottom: 28px;
+  font-weight: 800;
 }
 
 .hero-title .accent {
@@ -562,12 +568,13 @@ img {
 }
 
 .section-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: clamp(36px, 5.5vw, 68px);
   letter-spacing: 2px;
   line-height: 1;
   color: var(--white);
   margin-bottom: 44px;
+  font-weight: 700;
 }
 
 /* ── REVEAL ANIMATIONS ── */
@@ -611,11 +618,12 @@ img {
 }
 
 .about-text h3 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 36px;
   letter-spacing: 2px;
   margin-bottom: 24px;
   line-height: 1.2;
+  font-weight: 700;
 }
 
 .about-text p {
@@ -646,11 +654,12 @@ img {
 }
 
 .stat-num {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
   color: var(--gold);
   line-height: 1;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .stat-label {
@@ -736,11 +745,12 @@ img {
 }
 
 .t-age {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 64px;
   color: var(--gold);
   line-height: 1;
   margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .t-name {
@@ -803,11 +813,12 @@ img {
 }
 
 .stat-big-num {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 72px;
   color: var(--gold);
   line-height: 1;
   margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .stat-big-label {
@@ -939,11 +950,12 @@ img {
 }
 
 .quality-content h3 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 22px;
   letter-spacing: 2px;
   margin-bottom: 12px;
   color: var(--white);
+  font-weight: 700;
 }
 
 .quality-content p {
@@ -966,10 +978,11 @@ img {
 }
 
 .contact-info h3 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 32px;
   letter-spacing: 2px;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .contact-info p {
@@ -1031,10 +1044,11 @@ img {
 }
 
 .form-block h3 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 28px;
   letter-spacing: 2px;
   margin-bottom: 32px;
+  font-weight: 700;
 }
 
 .form-group {
@@ -1197,9 +1211,10 @@ img {
 }
 
 .footer-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
   letter-spacing: 2px;
+  font-weight: 700;
 }
 
 .footer-tagline {
@@ -1401,6 +1416,81 @@ img {
   }
 }
 
+@media (max-width: 640px) {
+  .header-brand {
+    font-size: 16px;
+  }
+
+  .hero-content {
+    padding: 0 16px clamp(60px, 8vh, 80px);
+  }
+
+  .hero-title {
+    font-size: clamp(28px, 7vw, 52px);
+    margin-bottom: 18px;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+
+  .section {
+    padding: clamp(45px, 6vh, 65px) 18px;
+  }
+
+  .section-title {
+    font-size: clamp(26px, 5vw, 42px);
+    margin-bottom: 32px;
+  }
+
+  .form-block {
+    padding: 32px 20px;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  .contact-wrap {
+    gap: 32px;
+  }
+
+  .quality-card {
+    padding: 32px 24px;
+  }
+
+  .training-card {
+    padding: 32px 24px;
+  }
+
+  .t-age {
+    font-size: 52px;
+  }
+
+  .about-text h3 {
+    font-size: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 @media (max-width: 480px) {
   .pre-emblem {
     width: 90px;
@@ -1412,18 +1502,38 @@ img {
     letter-spacing: 3px;
   }
 
+  .header-brand {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .header-emblem {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero {
+    min-height: 450px;
+  }
+
   .hero-content {
-    padding: 0 18px clamp(60px, 8vh, 80px);
+    padding: 0 14px clamp(50px, 6vh, 70px);
   }
 
   .hero-title {
-    font-size: clamp(26px, 6vw, 48px);
-    margin-bottom: 18px;
+    font-size: clamp(24px, 6vw, 40px);
+    margin-bottom: 16px;
+    line-height: 1;
   }
 
   .hero-sub {
     font-size: 13px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    margin-bottom: 16px;
   }
 
   .hero-scroll {
@@ -1431,12 +1541,17 @@ img {
   }
 
   .section {
-    padding: clamp(40px, 6vh, 60px) 18px;
+    padding: clamp(35px, 5vh, 50px) 14px;
   }
 
   .section-title {
-    font-size: clamp(24px, 5vw, 36px);
-    margin-bottom: 32px;
+    font-size: clamp(22px, 5vw, 32px);
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    margin-bottom: 10px;
   }
 
   .ticker-wrap {
@@ -1444,24 +1559,53 @@ img {
   }
 
   .ticker-label {
-    padding: 0 20px;
-    font-size: 9px;
+    padding: 0 16px;
+    font-size: 8px;
+    letter-spacing: 2px;
   }
 
   .ticker-item {
-    font-size: 10px;
+    font-size: 9px;
+    gap: 6px;
   }
 
   .slide-nav {
     width: 100%;
   }
 
+  .slide-nav-list li a {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
   .stat-box {
-    padding: 20px 16px;
+    padding: 16px 12px;
   }
 
   .stat-num {
-    font-size: 36px;
+    font-size: 32px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+  }
+
+  .about-text h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .about-text p {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .stat-big-num {
+    font-size: 56px;
+  }
+
+  .stat-big-label {
+    font-size: 11px;
   }
 
   .gallery-grid {
@@ -1470,29 +1614,506 @@ img {
     gap: 8px;
   }
 
-  .form-block {
+  .t-age {
+    font-size: 44px;
+  }
+
+  .t-name {
+    font-size: 11px;
+  }
+
+  .t-desc {
+    font-size: 13px;
+  }
+
+  .t-location {
+    font-size: 10px;
+  }
+
+  .training-card {
+    padding: 24px 20px;
+  }
+
+  .quality-card {
     padding: 28px 20px;
+    gap: 16px;
+  }
+
+  .quality-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .quality-content h3 {
+    font-size: 18px;
+  }
+
+  .quality-content p {
+    font-size: 13px;
+  }
+
+  .contact-info h3 {
+    font-size: 24px;
+  }
+
+  .contact-info p {
+    font-size: 13px;
+  }
+
+  .contact-label {
+    font-size: 9px;
+  }
+
+  .contact-value {
+    font-size: 13px;
+  }
+
+  .form-block {
+    padding: 24px 16px;
+  }
+
+  .form-block h3 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    gap: 16px;
   }
 
   .form-row-2 {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .contact-info {
-    order: 2;
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 11px 12px;
+    font-size: 16px;
+  }
+
+  .field label {
+    font-size: 9px;
+  }
+
+  .submit-btn {
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 14px 32px;
+    font-size: 11px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-title {
+    font-size: 16px;
+  }
+
+  .footer-tagline {
+    font-size: 12px;
+  }
+
+  .footer-col-title {
+    font-size: 10px;
+    margin-bottom: 16px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+  }
+
+  .footer-copy {
+    font-size: 11px;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .pre-emblem {
+    width: 80px;
+    height: 80px;
+  }
+
+  .pre-logo {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .pre-label {
+    font-size: 8px;
+  }
+
+  .site-header {
+    height: 60px;
+  }
+
+  .header-inner {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .header-logo-link {
+    gap: 10px;
+  }
+
+  .header-brand {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .header-emblem {
+    width: 35px;
+    height: 35px;
+  }
+
+  .burger {
+    width: 40px;
+    height: 40px;
+    gap: 5px;
+  }
+
+  .burger-line {
+    width: 22px;
+    height: 2px;
+  }
+
+  .hero {
+    min-height: 400px;
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    padding: 0 12px clamp(40px, 5vh, 60px);
+  }
+
+  .hero-title {
+    font-size: clamp(20px, 5.5vw, 32px);
+    margin-bottom: 12px;
+  }
+
+  .hero-sub {
+    font-size: 12px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  .hero-eyebrow {
+    font-size: 8px;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+
+  .hero-eyebrow::before {
+    width: 20px;
+    height: 1px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .slide-nav {
+    width: 100%;
+    padding-top: 60px;
+  }
+
+  .slide-nav-list li a {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .section {
+    padding: clamp(30px, 4vh, 45px) 12px;
+  }
+
+  .section-label {
+    font-size: 8px;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .section-label::before {
+    width: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(18px, 4.5vw, 26px);
+    margin-bottom: 20px;
+  }
+
+  .ticker-wrap {
+    height: 36px;
+    gap: 0;
+  }
+
+  .ticker-label {
+    padding: 0 12px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .ticker-track {
+    gap: 48px;
+    padding: 0 16px;
+  }
+
+  .ticker-item {
+    font-size: 8px;
+    gap: 4px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-box {
+    padding: 14px 10px;
+  }
+
+  .stat-num {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+  }
+
+  .about-text h3 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .about-text p {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .stat-big-num {
+    font-size: 48px;
+  }
+
+  .stat-big-label {
+    font-size: 9px;
+  }
+
+  .stat-item {
+    padding: 32px 16px;
+  }
+
+  .gallery-grid {
+    gap: 6px;
+  }
+
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .training-card {
+    padding: 20px 16px;
+  }
+
+  .t-age {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .t-name {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .t-desc {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .t-location {
+    font-size: 9px;
+  }
+
+  .quality-section::before {
+    width: 400px;
+    height: 400px;
+    right: -150px;
+    top: -150px;
+  }
+
+  .quality-grid {
+    gap: 20px;
+  }
+
+  .quality-card {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .quality-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .quality-content h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .quality-content p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .contact-wrap {
+    gap: 24px;
+  }
+
+  .contact-info h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .contact-info p {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .contact-label {
+    font-size: 8px;
+  }
+
+  .contact-value {
+    font-size: 12px;
+  }
+
+  .contact-items {
+    gap: 12px;
+  }
+
+  .contact-item {
+    padding: 12px 14px;
   }
 
   .form-block {
-    order: 1;
+    padding: 20px 14px;
+  }
+
+  .form-block h3 {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .form-group {
+    gap: 14px;
+  }
+
+  .field label {
+    font-size: 8px;
+    margin-bottom: 4px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 10px 10px;
+    font-size: 15px;
+    border-radius: 2px;
+  }
+
+  .field textarea {
+    min-height: 100px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
+  .form-status {
+    font-size: 11px;
+    margin-top: 12px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-brand {
+    gap: 12px;
+  }
+
+  .footer-emblem {
+    width: 56px;
+    height: 56px;
+  }
+
+  .footer-title {
+    font-size: 14px;
+  }
+
+  .footer-tagline {
+    font-size: 11px;
+  }
+
+  .footer-col-title {
+    font-size: 8px;
+    margin-bottom: 12px;
+  }
+
+  .footer-links {
+    gap: 8px;
+  }
+
+  .footer-links a {
+    font-size: 11px;
   }
 
   .footer-bottom {
-    flex-direction: column;
-    text-align: center;
+    padding-top: 20px;
+    gap: 16px;
+  }
+
+  .footer-copy {
+    font-size: 10px;
   }
 
   .footer-social {
-    justify-content: center;
-    width: 100%;
+    gap: 8px;
+  }
+
+  .social-link {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .about-badge {
+    padding: 8px 16px;
+    font-size: 10px;
+    bottom: 16px;
+    left: 16px;
   }
 }
