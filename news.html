@@ -1,103 +1,186 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>События клуба · FC Batyr</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Новости FC Batyr - Последние новости академии, турниры и тренировки.">
+  <title>Новости — FC Batyr Академия</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    .news-grid-page { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
-    @media(max-width:860px){ .news-grid-page { grid-template-columns:repeat(2,1fr); } }
-    @media(max-width:560px){ .news-grid-page { grid-template-columns:1fr; } }
-    .news-card-page { background:var(--card); border:1px solid rgba(255,255,255,.05); overflow:hidden; transition:border-color .3s,transform .3s; }
-    .news-card-page:hover { border-color:rgba(201,168,76,.25); transform:translateY(-4px); }
-    .news-card-img { width:100%; aspect-ratio:16/10; overflow:hidden; }
-    .news-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
-    .news-card-page:hover .news-card-img img { transform:scale(1.05); }
-    .news-card-body-page { padding:24px; }
-    .news-cat { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .news-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; line-height:1.25; color:var(--white); margin-bottom:10px; }
-    .news-excerpt { font-size:13px; font-weight:300; line-height:1.7; color:rgba(255,255,255,.5); margin-bottom:16px; }
-    .news-date { font-size:11px; color:rgba(255,255,255,.3); }
+    .page-hero { padding: 120px clamp(24px, 5vw, 80px) 80px; background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%); border-bottom: 2px solid var(--gold); }
+    .page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 6vw, 64px); letter-spacing: 2px; color: var(--white); margin-bottom: 16px; }
+    .page-hero p { font-size: 16px; color: var(--muted); max-width: 600px; }
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .news-card { background: rgba(17, 17, 17, 0.6); border: 1px solid rgba(212, 168, 67, 0.15); overflow: hidden; transition: all 0.3s ease; }
+    .news-card:hover { border-color: var(--gold); background: rgba(25, 25, 25, 0.8); transform: translateY(-4px); }
+    .news-img { width: 100%; height: 220px; overflow: hidden; }
+    .news-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .news-card:hover .news-img img { transform: scale(1.08); }
+    .news-body { padding: 24px; }
+    .news-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .news-title { font-size: 18px; font-weight: 600; line-height: 1.4; color: var(--white); margin-bottom: 12px; }
+    .news-excerpt { font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--muted); margin-bottom: 12px; }
+    .news-date { font-size: 12px; color: rgba(255, 255, 255, 0.3); }
+    @media (max-width: 1024px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .news-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pre-emblem"><img src="img/logo.png" alt="FC Batyr"></div>
+    <div class="pre-logo">FC <span>BATYR</span></div>
+    <div class="pre-bar"><div class="pre-bar-fill"></div></div>
+    <div class="pre-label">Академия</div>
+  </div>
 
-<div id="particles" aria-hidden="true"></div>
-
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <button class="burger" id="burger-btn" aria-label="Меню">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo-link">
+        <div class="header-emblem"><img src="img/logo.png" alt="FC Batyr"></div>
+        <div class="header-brand">FC <span class="accent">BATYR</span></div>
+      </a>
+      <button class="burger" id="burger">
         <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
       </button>
-      <a href="index.html" class="header-logo-link">
-        <div class="header-emblem"><img src="logo.png" alt="FCB" onerror="this.style.display='none'" /></div>
-        <span class="header-brand">FC <span>BATYR</span></span>
-      </a>
     </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="slide-nav" id="slideNav">
+    <ul class="slide-nav-list">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="news.html">Новости</a></li>
+      <li><a href="gallery.html">Галерея</a></li>
+      <li><a href="program.html">Программы</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="admin.html">Админ</a></li>
+    </ul>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <h1>Новости <span class="accent">и Обновления</span></h1>
+    <p>Последние новости, турниры и моменты академии FC Batyr.</p>
   </div>
-</header>
 
-<nav class="slide-nav" id="slide-nav">
-  <div class="slide-nav-head">
-    <div class="slide-nav-logo-img"><img src="logo.png" alt="FCB" onerror="this.style.display='none'" /></div>
-    <div><div class="slide-nav-title">FC <span>BATYR</span></div><div class="slide-nav-sub">Академия · Экибастуз · 2015</div></div>
-  </div>
-  <ul class="slide-nav-list">
-    <li><a href="index.html" class="nav-close">Главная <span class="nav-arr">→</span></a></li>
-    <li><a href="news.html" class="nav-close">События клуба <span class="nav-arr">→</span></a></li>
-    <li><a href="gallery.html" class="nav-close">Галерея <span class="nav-arr">→</span></a></li>
-    <li><a href="program.html" class="nav-close">О программе <span class="nav-arr">→</span></a></li>
-    <li><a href="contacts.html" class="nav-close">Контакты <span class="nav-arr">→</span></a></li>
-  </ul>
-  <div class="slide-nav-footer">
-    <a href="contacts.html#form" class="slide-nav-cta primary nav-close">Подать заявку</a>
-    <a href="https://www.instagram.com/fcbatyr_ekb/" target="_blank" class="slide-nav-cta outline">Instagram →</a>
-  </div>
-</nav>
-<div class="nav-overlay" id="nav-overlay"></div>
+  <!-- News Grid -->
+  <section class="section">
+    <div class="news-grid">
+      <div class="news-card" data-reveal>
+        <div class="news-img"><img src="img/placeholder/team.png" alt="\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0438"></div>
+        <div class="news-body">
+          <div class="news-tag">Т\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0438</div>
+          <div class="news-title">И\u043d\u0442\u0435\u043d\u0441\u0438\u0432\u043d\u0430\u044f \u0442\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430: \u0433\u0440\u0443\u043f\u043f\u0430 U15-U16</div>
+          <p class="news-excerpt">\u042d\u043b\u0438\u0442\u043d\u0430\u044f \u0433\u0440\u0443\u043f\u043f\u0430 \u043f\u0440\u043e\u0445\u043e\u0434\u0438\u0442 \u043f\u0440\u043e\u0434\u0432\u0438\u043d\u0443\u0442\u044b\u0435 \u0442\u0442\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0438.</p>
+          <div class="news-date">15 \u043c\u0430\u0440\u0442\u0430 2025</div>
+        </div>
+      </div>
 
-<!-- HERO -->
-<div class="subpage-hero">
-  <a href="index.html" class="back-link">На главную</a>
-  <p class="eyebrow">FC Batyr</p>
-  <h1>События <em>клуба</em></h1>
-  <p>Последние новости, матчи, турниры и жизнь академии FC Batyr.</p>
-</div>
+      <div class="news-card" data-reveal>
+        <div class="news-img"><img src="img/placeholder/team.png" alt="\u0422\u0443\u0440\u043d\u0438\u0440"></div>
+        <div class="news-body">
+          <div class="news-tag">\u0422\u0443\u0440\u043d\u0438\u0440</div>
+          <div class="news-title">\u041f\u043e\u0431\u0435\u0434\u0430 \u043d\u0430 \u041f\u0440\u044b\u0447\u043d\u044b\u043c \u0427\u0435\u043c\u043f\u0438\u043e\u043d\u0430\u0442\u0435: U13-U14</div>
+          <p class="news-excerpt">\u041d\u0430\u0448\u0430 \u043a\u043e\u043c\u0430\u043d\u0434\u0430 U13-U14 \u043f\u047d\u0430\u0446\u0430 \u043f\u0435\u0440\u0432\u043e\u0435 \u043c\u0435\u0441\u0442\u043e \u0432 \u043f\u0440\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u043c \u0442\u043e\u0443\u0440\u043d\u0438\u0440\u0435 \u0447\u0435\u043c\u043f\u0438\u043e\u043d\u0430\u0442\u0435.</p>
+          <div class="news-date">12 \u043c\u0430\u0440\u0442\u0430 2025</div>
+        </div>
+      </div>
 
-<!-- NEWS GRID -->
-<section class="section" style="background:#080c1a">
-  <div class="news-grid-page">
+      <div class="news-card" data-reveal>
+        <div class="news-img"><img src="img/placeholder/team.png" alt="\u0422\u0440\u0435\u043d\u0435\u0440"></div>
+        <div class="news-body">
+          <div class="news-tag">\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u044f</div>
+          <div class="news-title">\u041d\u043e\u0432\u044b\u0435 \u0442\u0440\u0435\u043d\u0435\u0440\u044b UEFA \u043f\u0440\u0438\u0441\u043e\u0435\u0434\u0438\u043d\u0438\u043b\u0438\u0441\u044c \u043a \u0442\u0435\u043a\u043d\u0435</div>
+          <p class="news-excerpt">FC Batyr \u043f\u043e\u0436\u0438\u043d\u0430\u0435\u0442 \u0434\u0432\u0443\u0445 \u043e\u043f\u044b\u0442\u043d\u044b\u0445 \u0442\u0440\u0435\u043d\u0435\u0440\u043e\u0432. \u041e\u043d\u0438 \u0440\u0430\u0431\u043e\u0442\u0430\u044e\u0442 \u0441 \u0433\u0440\u0443\u043f\u043f\u043e\u0439 U10-U12.</p>
+          <div class="news-date">10 \u043c\u0430\u0440\u0442\u0430 2025</div>
+        </div>
+      </div>
 
-    <div class="news-card-page" data-reveal data-delay="1">
-      <div class="news-card-img"><img src="news-1-600x400.svg" alt="Тренировка U15-U16" /></div>
-      <div class="news-card-body-page">
-        <div class="news-cat">Тренировки</div>
-        <div class="news-title">Интенсивная тренировка группы U15–U16: новый уровень подготовки</div>
-        <p class="news-excerpt">Группа старших игроков провела трёхчасовую тренировку с упором на тактику и физическую подготовку перед предстоящим турниром.</p>
-        <div class="news-date">8 марта 2025</div>
+      <div class="news-card" data-reveal>
+        <div class="news-img"><img src="img/placeholder/team.png" alt="Объект"></div>
+        <div class="news-body">
+          <div class="news-tag">Объект</div>
+          <div class="news-title">Открыло новый объект обучения</div>
+          <p class="news-excerpt">Наш современный учебный комплекс оснащен новейшим оборудованием, профессиональными полями и мировоклассными удобствами для развития спортсменов.</p>
+          <div class="news-date">8 марта 2025</div>
+        </div>
+      </div>
+
+      <div class="news-card" data-reveal>
+        <div class="news-img"><img src="img/placeholder/team.png" alt="Матч"></div>
+        <div class="news-body">
+          <div class="news-tag">Матч</div>
+          <div class="news-title">Товарищеский матч: Победа профессиональной команды</div>
+          <p class="news-excerpt">Наша профессиональная команда победила посещающий международный клуб в товарищеском матче, демонстрируя отличную форму и тактику.</p>
+          <div class="news-date">5 марта 2025</div>
+        </div>
+      </div>
+
+      <div class="news-card" data-reveal>
+        <div class="news-img"><img src="img/placeholder/team.png" alt="Event"></div>
+        <div class="news-body">
+          <div class="news-tag">Event</div>
+          <div class="news-title">Annual Awards Ceremony Celebrates Achievements</div>
+          <p class="news-excerpt">Academy held annual awards ceremony recognizing player development, coaching excellence, and team spirit throughout the season.</p>
+          <div class="news-date">March 1, 2025</div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="news-card-page" data-reveal data-delay="2">
-      <div class="news-card-img"><img src="news-2-600x400.svg" alt="Победа в турнире" /></div>
-      <div class="news-card-body-page">
-        <div class="news-cat">Турниры</div>
-        <div class="news-title">Победа в региональном турнире — группа U13–U14</div>
-        <p class="news-excerpt">Наши ребята из группы U13–U14 заняли первое место в региональном турнире Павлодарской области. Поздравляем команду и тренерский штаб!</p>
-        <div class="news-date">5 марта 2025</div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-emblem"><img src="img/logo.png" alt="FC Batyr"></div>
+        <h4 class="footer-title">FC Batyr</h4>
+        <p class="footer-tagline">Premier football academy developing champions since 2009.</p>
+      </div>
+      <div>
+        <h5 class="footer-col-title">Academy</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#training">Training Programs</a></li>
+          <li><a href="index.html#quality">Why Choose Us</a></li>
+          <li><a href="program.html">Programs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="footer-col-title">Community</h5>
+        <ul class="footer-links">
+          <li><a href="news.html">News</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="footer-col-title">Connect</h5>
+        <ul class="footer-links">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 FC Batyr Academy. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link">f</a>
+        <a href="#" class="social-link">📷</a>
+        <a href="#" class="social-link">𝕏</a>
+        <a href="#" class="social-link">▶</a>
+      </div>
+    </div>
+  </footer>
 
-    <div class="news-card-page" data-reveal data-delay="3">
-      <div class="news-card-img"><img src="news-3-600x400.svg" alt="Новые тренеры" /></div>
-      <div class="news-card-body-page">
-        <div class="news-cat">Академия</div>
-        <div class="news-title">Новые тренеры присоединились к штабу клуба</div>
-        <p class="news-excerpt">FC Batyr пополнился двумя опытными специалистами с лицензиями UEFA. Тренеры уже приступили к работе с группами U10–U12.</p>
+  <script src="app.js"></script>
+</body>
+</html>
         <div class="news-date">2 марта 2025</div>
       </div>
     </div>
